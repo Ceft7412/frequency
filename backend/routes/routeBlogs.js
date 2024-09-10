@@ -1,12 +1,11 @@
 import express from "express";
+import { fetchBlogs } from "../controllers/blogsController.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Hello, world!");
-});
+router.get("/blogs", fetchBlogs);
 
-router.post("/blogs", (req, res) => {
+router.post("/blogs/add", (req, res) => {
   res.send("Hello, blogs!");
 });
 

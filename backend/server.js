@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import router from "./routes/routeBooks.js";
+import router from "./routes/routeBlogs.js";
 
 dotenv.config();
 
