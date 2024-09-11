@@ -2,11 +2,15 @@ import express from "express";
 import dotenv from "dotenv";
 import router from "./routes/routeBlogs.js";
 import connectDB from "./config/db.js";
+import userRoute from "./routes/userRoute.js";
 
 dotenv.config();
 
 connectDB();
 const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const PORT = process.env.PORT;
 const ENVIRONMENT = process.env.NODE_ENVIRONMENT;
@@ -17,7 +21,11 @@ app.listen(PORT, () => {
   console.log("Frequency App");
 });
 
-app.use("/api/", router);
+// User router
+app.use("/api/users/", userRoute);
 
-app.use("/api/blogs", router);
-app.use("/api/blogs/35/blog", router);
+// Blog router
+// app.use("/api/", router);
+
+// app.use("/api/blogs", router);
+// app.use("/api/blogs/35/blog", router);
