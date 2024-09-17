@@ -10,7 +10,7 @@ export default function Create() {
   return (
     <>
       <AuthLayout>
-        <main className="pl-64">create</main>
+        <main className="ml-64 ">create</main>
       </AuthLayout>
     </>
   );
